@@ -16,13 +16,45 @@ This is a queuing model in which the arrival is Marcovian and departure distribu
 
 ![imAGE](2.png)
 
-
-
 ## Experiment:
+![image](https://github.com/VaishnaviMariappan/Single-server-infinite-capacity---Markov-Model/assets/94169913/3cf45ac2-964d-46e7-a0f8-ff9052ec57b2)
+![image](https://github.com/VaishnaviMariappan/Single-server-infinite-capacity---Markov-Model/assets/94169913/1dc55c95-213c-4fa9-8c34-91630783f1f9)
 
 
 ## Program
+```
+DEVELOPRD BY : Vaishnavi M
+REGISTER NO : 212221240058
 
+arr_time=float(input("Enter the mean inter arrival time of objects from Feeder (in secs): "))
+ser_time=float(input("Enter the mean  inter service time of Lathe Machine (in secs) :  "))
+Robot_time=float(input("Enter the Additional time taken for the Robot (in secs) :  "))
+lam=1/arr_time
+mu=1/(ser_time+Robot_time)
+print("--------------------------------------------------------------")
+print("Single Server with Infinite Capacity - (M/M/1):(oo/FIFO)")
+print("--------------------------------------------------------------")
+print("The mean arrival rate per second : %0.2f "%lam)
+print("The mean service rate per second : %0.2f "%mu)
+if (lam <  mu):
+    Ls=lam/(mu-lam)
+    Lq=Ls-lam/mu
+    Ws=Ls/lam
+    Wq=Lq/lam
+    print("Average number of objects in the system : %0.2f "%Ls)
+    print("Average number of objects in the conveyor :  %0.2f "%Lq)
+    print("Average waiting time of an object in the system : %0.2f secs"%Ws)
+    print("Average waiting time of an object in the conveyor : %0.2f secs"%Wq)
+    print("Probability that the system is busy : %0.2f "%(lam/mu) )
+    print("Probability that the system is empty : %0.2f "%(1-lam/mu) )
+else:
+    print("Warning! Objects Over flow will happen in the conveyor")
+print("---------------------------------------------------------------")
 
-## Output  and result
+```
+## Output:
+![image](https://github.com/VaishnaviMariappan/Single-server-infinite-capacity---Markov-Model/assets/94169913/779a3caa-d524-465d-95cf-746403792419)
 
+## Result:
+
+The average number of material in the sysytem and in the conveyor and waiting time are successfully found.
